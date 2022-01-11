@@ -1,0 +1,14 @@
+integrations:
+  - name: nri-flex
+    interval: 1m
+    config:
+      name: linuxRunShell
+      apis:
+        - name: RunShell
+          shell: /bin/bash
+          commands:
+            - run: "sh /home/vicky/Desktop/test.sh"
+              split: horizontal
+              split_by: \s+
+              row_start: 1
+              set_header: [status]
